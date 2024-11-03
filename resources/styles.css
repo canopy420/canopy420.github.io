@@ -1,0 +1,70 @@
+body {
+    background: linear-gradient(#00000099, #00000099), url("gif.gif") no-repeat center fixed;
+    background-size: cover;
+    image-rendering: optimizespeed;
+    font-family: MorePeftectDos, 'Courier New', monospace;
+    text-align: center;
+    word-break: break-word;
+    color: #e8eaed;
+
+}
+
+@font-face {
+    font-family: MorePeftectDos;
+    src: url("moreperfectdos.ttf");
+}
+
+a, p {
+    font-size: 17px;
+}
+
+a, h1 {
+  text-decoration: none;
+  color: inherit;
+  text-shadow:
+      0 0 7px #7f0b11
+      0 0 14px #7f0b11
+}
+
+html {
+    cursor: url("melody.cur"), default;
+  }
+  
+   .text-border {
+    border: 3px double #7f0b11;
+    border-radius: 0px;
+    justify-content: center;
+    padding: 5px 10px;
+    align-items: center;
+    display: inline-block;
+    background-color: #000;
+
+}
+
+  #preload p {
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.25rem;
+  }
+
+  #preload {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 1.25rem;
+    transition: 0.6s;
+  }
+  
+  #hidden {
+    opacity: 0;
+    transition: 0s;
+  }  
+  
+  .highlight {
+    color: #7f0b11;
+    font-size: 17px;
+    text-shadow: none;
+}
+
