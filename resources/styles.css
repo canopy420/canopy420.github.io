@@ -5,7 +5,7 @@ body {
     font-family: MorePeftectDos, 'Courier New', monospace;
     text-align: center;
     word-break: break-word;
-    color: #e8eaed;
+    color: #ffffff;
 
 }
 
@@ -22,8 +22,8 @@ a, h1 {
   text-decoration: none;
   color: inherit;
   text-shadow:
-      0 0 7px #7f0b11
-      0 0 14px #7f0b11
+      0 0 7px #ffffff
+      0 0 14px #ffffff
 }
 
 html {
@@ -31,7 +31,7 @@ html {
   }
   
    .text-border {
-    border: 3px double #7f0b11;
+    border: 3px double #C3B1E1;
     border-radius: 0px;
     justify-content: center;
     padding: 5px 10px;
@@ -55,16 +55,29 @@ html {
     position: absolute;
     font-size: 1.25rem;
     transition: 0.6s;
+    color: #ffffff;
+    
   }
   
   #hidden {
     opacity: 0;
     transition: 0s;
+    color: #ffffff;
   }  
   
   .highlight {
-    color: #7f0b11;
+    color: #B19CD8;
     font-size: 17px;
     text-shadow: none;
 }
 
+.border-img {
+  border: 3px double #C3B1E1;
+  border-radius: 0px;
+  justify-content: center;
+  padding: 0px 0px;
+  align-items: center;
+  display: inline-block;
+  background-color: #000;
+
+}   
