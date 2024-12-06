@@ -27,17 +27,20 @@ a, h1 {
 }
 
 html {
-    cursor: url("melody.cur"), default;
+    cursor: url("cursor.cur"), default;
   }
   
    .text-border {
-    border: 3px double #C3B1E1;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 30px;
+    border: 3px double #80a1f2;
     border-radius: 0px;
     justify-content: center;
     padding: 5px 10px;
     align-items: center;
     display: inline-block;
-    background-color: #000;
+    background-color: #1717178c;
 
 }
 
@@ -66,18 +69,27 @@ html {
   }  
   
   .highlight {
-    color: #B19CD8;
+    color: #7d7ff1;
     font-size: 17px;
     text-shadow: none;
+    cursor: url("pointer.cur"), pointer;
 }
 
 .border-img {
-  border: 3px double #C3B1E1;
+  border: 3px double #80a1f2;
   border-radius: 0px;
   justify-content: center;
   padding: 0px 0px;
   align-items: center;
   display: inline-block;
-  background-color: #000;
+  background-color: #1717178c;
 
 }   
+
+p img {
+  vertical-align: middle;
+}
+
+img {
+  padding: 3px;
+}
