@@ -93,3 +93,8 @@ p img {
 img {
   padding: 3px;
 }
+
+.von {
+  width: 10px;
+  height: auto;
+}
