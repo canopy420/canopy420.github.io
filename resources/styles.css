@@ -94,7 +94,10 @@ img {
   padding: 3px;
 }
 
-.von {
-  width: 10px;
-  height: auto;
+.miku {
+  position: fixed;     
+  bottom: 20px;        
+  right: 20px;         
+  z-index: 9999;       
+  cursor: url("pointer.cur"), pointer;
 }
