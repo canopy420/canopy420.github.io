@@ -81,11 +81,10 @@ html {
   font-size: 17px;
   text-shadow: none;
   cursor: url("pointer.cur"), pointer;
-  animation: tetas 0.4s ease-in-out infinite;
   transform: scale3d(120%);
 
 }
-/* Animación de agitarse */
+
 @keyframes shake {
   0% {
       transform: translateX(0);
@@ -152,16 +151,16 @@ img {
 }
 
 .miku {
-  position: fixed;     
+  position: absolute;     
   bottom: 20px;        
   right: 20px;         
   z-index: 9999;       
   cursor: url("pointer.cur"), pointer;
+  display: inline-block;
 }
 
-  /* ChatGPT  FIXED BY ME*/
   #player-controls {
-    display: flex;
+    display: inline-block;
     align-items: center;
     gap: 10px;
     margin-top: 20px;

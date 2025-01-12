@@ -73,7 +73,63 @@ html {
     font-size: 17px;
     text-shadow: none;
     cursor: url("pointer.cur"), pointer;
+    transition: 0.5s;
 }
+
+.highlight:hover {
+  color: #ffffff;
+  font-size: 17px;
+  text-shadow: none;
+  cursor: url("pointer.cur"), pointer;
+  transform: scale3d(120%);
+
+}
+
+@keyframes shake {
+  0% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+  75% {
+      transform: translateX(-5px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+
+a.highlight {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+a.highlight:hover {
+  animation: shake 0.5s ease; 
+}
+@keyframes shake {
+  0% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+  75% {
+      transform: translateX(-5px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
 
 .border-img {
   border: 3px double #80a1f2;
@@ -98,17 +154,18 @@ img {
   position: fixed;     
   bottom: 20px;        
   right: 20px;         
-  z-index: 9999;  
-  cursor: url("pointer.cur"), pointer;     
+  z-index: 9999;       
+  cursor: url("pointer.cur"), pointer;
 }
 
- /* ChatGPT  FIXED BY ME*/
   #player-controls {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
     justify-content: center;
+    padding: 5px 10px;
+    display: inline-block;
   }
 
   label {
