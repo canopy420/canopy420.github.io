@@ -73,7 +73,64 @@ html {
     font-size: 17px;
     text-shadow: none;
     cursor: url("pointer.cur"), pointer;
+    transition: 0.5s;
 }
+
+.highlight:hover {
+  color: #ffffff;
+  font-size: 17px;
+  text-shadow: none;
+  cursor: url("pointer.cur"), pointer;
+  animation: tetas 0.4s ease-in-out infinite;
+  transform: scale3d(120%);
+
+}
+/* Animación de agitarse */
+@keyframes shake {
+  0% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+  75% {
+      transform: translateX(-5px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+
+a.highlight {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+a.highlight:hover {
+  animation: shake 0.5s ease; 
+}
+@keyframes shake {
+  0% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+  75% {
+      transform: translateX(-5px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
 
 .border-img {
   border: 3px double #80a1f2;
@@ -101,3 +158,24 @@ img {
   z-index: 9999;       
   cursor: url("pointer.cur"), pointer;
 }
+
+  /* ChatGPT  FIXED BY ME*/
+  #player-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  #volumeControl, #progressControl {
+    width: 150px;
+  }
+
+  #currentTime, #duration {
+    font-size: 14px;
+  }
