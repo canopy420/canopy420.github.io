@@ -1,83 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="resources/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/styles.css" />
     <title>Canopy.</title>
 </head>
 
 <body class="animate__animated animate__fadeIn">
 
-          <div id="preload">
-            <h2>Welcome, outsider.</h2> 
-          </div>
-         
+    <div id="preload">
+        <h2>Welcome, outsider.</h2>
+    </div>
+
     <div id="hidden">
-      <br>
-      <h1>CANOPY</h1>
-      <h3>"HTML is not a coding language. Most of you are trash and don't have the dedication to code anything. <br> You think that technology is just 'I put a game or some porn on the 5k PC my parents bought me,' and that's it."</h3>
-      <h3>-My Systems teacher</h3>
-    <br>
-    <div class="text-border">
-      <a href="es/esindex.html" class="highlight">[Cambiar idioma a Español.]</a>
-      <p><br><b>Welcome to my Website</b><br> <br>I made this website to practice web development, so don't expect much from it. <br><br><b>Why github?</b><br> <br>Because I'm too lazy to maintain a domain, and I spent half a night <br>and morning coding the music you are hearing right now. I wanted to make it worth it.</p>
-      <br>
-      <p>Pick one:</p>
-      <a href="about_me.html" class="highlight" target="_blank">[About me.]</a>
-      <a href="setup.html" class="highlight" target="_blank">[My Set-Up.]</a>
-      <a href="webs.html" class="highlight" target="_blank">[Other cool websites.]</a>
-      <a href="software.html" class="highlight" target="_blank">[Software recomendations.]</a>
-      <br>
-      <br>
-    </div>
-    <br>
-    <br>
-    <a href="https://github.com/canopy420/canopy420.github.io" class="highlight" target="_blank">[Access the website source code here]</a>
-    <br>
-    <small>Last update: 28/12/2024</small>
-    <br>
-    <small>Changelog: i just moved miku and changed the song lmao</small>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="text-border">
-      <marquee>YOU ARE NOW LISTENING TO: LIL PEEP - HEAVEN SCENT (NO AIR)</marquee>
-    </div>
-   <div><a href="gym-class.mp4"><img src="resources/mikuu.gif" alt="miku" class="miku"></a></div> <!--Buah chaval menudo apaño que tengo aqui hecho -->
-    
+        <br>
+        <h1>CANOPY</h1>
+        <h3>"HTML is not a coding language. Most of you are trash and don't have the dedication to code anything. <br> You think that technology is just 'I put a game or some porn on the 5k PC my parents bought me,' and that's it."</h3>
+        <h3>-My Systems teacher</h3>
+        <br>
+        <div class="text-border">
+            <a href="es/esindex.html" class="highlight">[Cambiar idioma a Español.]</a>
+            <p>
+                <br><b>Welcome to my Website</b>
+                <br>
+                <br>I made this website to practice web development, so don't expect much from it.
+                <br>
+                <br><b>Why github?</b>
+                <br>
+                <br>Because I'm too lazy to maintain a domain, and I spent half a night
+                <br>and morning coding the music you are hearing right now. I wanted to make it worth it.</p>
+            <br>
+            <p>Pick one:</p>
+              <a href="about_me.html" class="highlight" target="_blank">[About me.]</a>
+              <a href="setup.html" class="highlight" target="_blank">[My Set-Up.]</a>
+              <a href="webs.html" class="highlight" target="_blank">[Other cool websites.]</a>
+              <a href="software.html" class="highlight" target="_blank">[Software recomendations.]</a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <marquee>YOU ARE NOW LISTENING TO - POORSTACY- DON'T LOOK AT ME</marquee>
+            <div id="player-controls">
+                <label for="volumeControl">Volume</label>
+                <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.5" />
+                <input id="progressControl" type="range" min="0" max="100" value="0" step="1" />
+                <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <a href="https://github.com/canopy420/canopy420.github.io" class="highlight" target="_blank">[Access the website source code here]</a>
+        <br>
+        <small>Last update: 28/12/2024</small>
+        <br>
+        <small>Changelog: An audio reproducer for the music was added.</small>
+
+        <div>
+            <a href="gym-class.mp4"><img src="resources/mikuu.gif" alt="miku" class="miku"></a>
+        </div>
+        <!--Buah chaval menudo apaño que tengo aqui hecho -->
 
     </div>
-    
+
+
     <audio id="music" class="music" src="resources/music.mp3" autoplay loop onplaying="" style="display: none"></audio>
-    
+
     <script>
-      document.getElementById("music").pause();
-      document.getElementById("hidden").style = "opacity: 0; transition: 2s;";
-  
-      document.addEventListener("mousedown", handleMouseDown);
-  
-      function handleMouseDown() {
-        document.getElementById("music").play();
-        document.getElementById("preload").style =
-          "opacity: 0; transition: 0.6s;";
-  
-        document.getElementById("hidden").style = "opacity: 1; transition: 2s;";
-  
-        var rythm = new Rythm();
-        rythm.addRythm("blur1", "blur", 0, 250);
-        rythm.addRythm('bass', 'pulse', 0, 10, {
-                min: 0.6,
-                max: 0.8
-              })
-        rythm.connectExternalAudioElement(document.getElementById("music"));
-        rythm.setGain(0.07);
-        rythm.start();
-        document.getElementById("music").play();
-        document.removeEventListener("mousedown", handleMouseDown);
-      }
+        document.getElementById("music").pause();
+          document.getElementById("hidden").style = "opacity: 0; transition: 2s;";
+        
+          document.addEventListener("mousedown", handleMouseDown);
+        
+          // ChatGPT
+          document.getElementById("volumeControl").addEventListener("input", adjustVolume);
+          document.getElementById("progressControl").addEventListener("input", seekTrack);
+        
+          function handleMouseDown() {
+            const music = document.getElementById("music");
+        
+            // ME
+            music.play();
+            document.getElementById("preload").style =
+              "opacity: 0; transition: 0.6s;";
+        
+            document.getElementById("hidden").style = "opacity: 1; transition: 2s;";
+        
+            var rythm = new Rythm();
+            rythm.addRythm("blur1", "blur", 0, 250);
+            rythm.addRythm('bass', 'pulse', 0, 10, {
+                    min: 0.6,
+                    max: 0.8
+                  });
+            rythm.connectExternalAudioElement(document.getElementById("music"));
+            rythm.setGain(0.07);
+            rythm.start();
+            document.removeEventListener("mousedown", handleMouseDown);
+        
+            document.getElementById("duration").textContent = formatTime(music.duration);
+          }
+        
+          // ChatGPT
+          function adjustVolume() {
+            const music = document.getElementById("music");
+            const volume = document.getElementById("volumeControl").value;
+            music.volume = volume;
+          }
+        
+          // Actualizar progreso
+          function updateProgress() {
+            const music = document.getElementById("music");
+            const progress = document.getElementById("progressControl");
+            const currentTime = music.currentTime;
+        
+            progress.value = (currentTime / music.duration) * 100;
+        
+            // Por donde va la musica
+            document.getElementById("currentTime").textContent = formatTime(currentTime);
+          }
+        
+          // La mierda de reproducir musica
+          function seekTrack() {
+            const music = document.getElementById("music");
+            const progress = document.getElementById("progressControl");
+            const seekTime = (progress.value / 100) * music.duration;
+            music.currentTime = seekTime;
+          }
+        
+          function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+          }
+        
+          // Actualiza el progreso del reproductor cada segundo
+          document.getElementById("music").addEventListener("timeupdate", updateProgress);
+        
+          // Pilla cuanto dura el audio
+          document.getElementById("music").addEventListener("loadedmetadata", function() {
+            // Actualiza la duración total en el reproductor
+            document.getElementById("duration").textContent = formatTime(this.duration);
+          });
     </script>
 
 </body>
+
 </html>

@@ -101,3 +101,24 @@ img {
   z-index: 9999;       
   cursor: url("pointer.cur"), pointer;
 }
+
+  /* ChatGPT  FIXED BY ME*/
+  #player-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  #volumeControl, #progressControl {
+    width: 150px;
+  }
+
+  #currentTime, #duration {
+    font-size: 14px;
+  }
