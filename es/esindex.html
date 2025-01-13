@@ -55,7 +55,7 @@
         <br>
         <a href="https://github.com/canopy420/canopy420.github.io" class="highlight" target="_blank">[Puedes acceder al codigo de la pagina aqui]</a>
         <br>
-        <small>Ultima actualización: 12/1/2025</small>
+        <small>Ultima actualización: 13/1/2025</small>
         <br>
         <small>Changelog: Se añadio un reproductor de musica y pequeñas animaciones (gracias games)</small>
         <div>
@@ -74,14 +74,12 @@
         
           document.addEventListener("mousedown", handleMouseDown);
         
-          // ChatGPT
           document.getElementById("volumeControl").addEventListener("input", adjustVolume);
           document.getElementById("progressControl").addEventListener("input", seekTrack);
         
           function handleMouseDown() {
             const music = document.getElementById("music");
         
-            // ME
             music.play();
             document.getElementById("preload").style =
               "opacity: 0; transition: 0.6s;";
@@ -102,7 +100,6 @@
             document.getElementById("duration").textContent = formatTime(music.duration);
           }
         
-          // ChatGPT
           function adjustVolume() {
             const music = document.getElementById("music");
             const volume = document.getElementById("volumeControl").value;
