@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(#00000099, #00000099), url("gif.gif") no-repeat center fixed;
+  background: linear-gradient(#0c0c0c99, #0c0c0c99), url("gif.gif") no-repeat center fixed;
     background-size: cover;
     image-rendering: optimizespeed;
     font-family: MorePerfectDots, 'Courier New', monospace;
@@ -26,21 +26,28 @@ a, h1 {
       0 0 14px #ffffff
 }
 
-html {
-    cursor: url("cursor.cur"), default;
-  }
-  
-   .text-border {
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 30px;
-    border: 3px double #80a1f2;
+  .text-border {
+    width: 50vw;
+    border: 3px double #465a8f;
     border-radius: 0px;
     justify-content: center;
     padding: 5px 10px;
     align-items: center;
     display: inline-block;
     background-color: #1717178c;
+
+}
+
+.frame-border {
+  width: 20vw;
+  margin-top: 30px;
+  border: 3px double #465a8f;
+  border-radius: 0px;
+  justify-content: center;
+  padding: 5px 10px;
+  align-items: center;
+  display: inline-block;
+  background-color: #1717178c;
 
 }
 
@@ -69,10 +76,9 @@ html {
   }  
   
   .highlight {
-    color: #7d7ff1;
+    color: #80a1f2;
     font-size: 17px;
     text-shadow: none;
-    cursor: url("pointer.cur"), pointer;
     transition: 0.5s;
 }
 
@@ -80,9 +86,12 @@ html {
   color: #ffffff;
   font-size: 17px;
   text-shadow: none;
-  cursor: url("pointer.cur"), pointer;
   transform: scale3d(120%);
 
+}
+
+h3 {
+  text-align: center;
 }
 
 @keyframes shake {
@@ -131,17 +140,6 @@ a.highlight:hover {
 }
 
 
-.border-img {
-  border: 3px double #80a1f2;
-  border-radius: 0px;
-  justify-content: center;
-  padding: 0px 0px;
-  align-items: center;
-  display: inline-block;
-  background-color: #1717178c;
-
-}   
-
 p img {
   vertical-align: middle;
 }
@@ -151,11 +149,10 @@ img {
 }
 
 .miku {
-  position: fixed;     
+  position: absolute;     
   bottom: 20px;        
   right: 20px;         
   z-index: 9999;       
-  cursor: url("pointer.cur"), pointer;
   display: inline-block;
 }
 
@@ -178,3 +175,43 @@ img {
   #currentTime, #duration {
     font-size: 14px;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+        text-align: center;
+
+    }
+
+    h3 {
+      text-align: center;
+  }
+
+    .text-border {
+        flex-direction: column; 
+        width: 100%;
+        align-items: center;
+    }
+
+    .frame-border {
+      flex-direction: column; 
+      width: 100%;
+      align-items: center;  
+  }
+
+    .p {
+      padding: 0 10px;
+      text-align: center;
+  }
+
+  .miku {
+    position: absolute;              
+    padding-left: 50vw;
+    width: 25vw;
+    bottom: auto;
+
+  }
+  
+
+    }
+
