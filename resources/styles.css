@@ -80,6 +80,7 @@ a, h1 {
     font-size: 17px;
     text-shadow: none;
     transition: 0.5s;
+    z-index: 10000;
 }
 
 .highlight:hover {
@@ -87,7 +88,6 @@ a, h1 {
   font-size: 17px;
   text-shadow: none;
   transform: scale3d(120%);
-
 }
 
 h3 {
@@ -196,4 +196,22 @@ img {
   
 
     }
+
+
+ ul  {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;            
+    flex-direction: column;   
+    align-items: center;      
+    justify-content: center;  
+
+
+ }   
+
+ li {
+  margin: 10px 0;           
+}
 

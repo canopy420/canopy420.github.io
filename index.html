@@ -9,12 +9,12 @@
     <title>Canopy.</title>
 </head>
 
-<body class="animate__animated animate__fadeIn">         <!--Greetings page-->
+<body>         <!--Greetings page-->
     <div id="preload">
         <h2>Welcome, outsider.</h2>
     </div>
 
-     <!--Website content-->
+     <!--Contenido de la pagina-->
 
     <div id="hidden">
         <br>
@@ -42,14 +42,22 @@
 
                <p>Pick one:</p> 
 
-                <a href="about_me.html" class="highlight" target="_blank">[About me.]</a>
-                <a href="setup.html" class="highlight" target="_blank">[My Set-Up.]</a>
-                <a href="webs.html" class="highlight" target="_blank">[Other cool websites.]</a>
-                <a href="software.html" class="highlight" target="_blank">[My software recomendations.]</a>
 
-            <br><br><br>
-            <marquee>YOU ARE NOW LISTENING TO : LIL PEEP - NINETEEN</marquee>
+               <ul>
+
+                    <li><a href="about_me.html" class="highlight" target="_blank">[About me.]</a></li>
+                    <li><a href="setup.html" class="highlight" target="_blank">[My Set-Up.]</a></li> 
+                    <li><a href="webs.html" class="highlight" target="_blank">[Other cool websites.]</a></li>
+                    <li><a href="software.html" class="highlight" target="_blank">[My software recomendations.]</a></li>
+                    <li><a href="projects.html" class="highlight" target="_blank">[My projects.]</a></li>
+   
+                </ul>
+            <br>
+            <marquee id="songTitle">YOU ARE NOW LISTENING TO : LIL PEEP - NINETEEN</marquee>
             <div id="player-controls">
+                <button id="prevBtn">◀</button>
+                <span id="currentSongTitle">LIL PEEP - NINETEEN</span>
+                <button id="nextBtn">▶</button> 
                 <label for="volumeControl">Volume</label>
                 <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.5" />
                 <input id="progressControl" type="range" min="0" max="100" value="0" step="1" />
@@ -61,15 +69,17 @@
 
         <a href="https://github.com/canopy420/canopy420.github.io" class="highlight" target="_blank">[Access the website source code here.]</a>
         <br>
-        <small>Last update: 28/1/2025</small>
+        <small>Last update: 13/2/2025</small>
         <br>
-        <small>Changelog: New websites, updated my discord.</small>
+        <small>Changelog: New things.</small>
+
 
         <div class="miku">
             <a href="gym-class.mp4">
                 <img src="resources/mikuu.gif" alt="miku">
             </a>
         </div>
+
     </div>
 
     <audio id="music" class="music" src="resources/music.mp3" autoplay loop style="display: none"></audio>
@@ -83,9 +93,24 @@
         document.getElementById("volumeControl").addEventListener("input", adjustVolume);
         document.getElementById("progressControl").addEventListener("input", seekTrack);
 
-        function handleMouseDown() {
-            const music = document.getElementById("music");
+        const music = document.getElementById("music");
+        const songTitle = document.getElementById("songTitle");
+        const currentSongTitle = document.getElementById("currentSongTitle");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
 
+        // Lista de canciones
+        const songs = [
+            { src: "resources/music.mp3", title: "LIL PEEP - NINETEEN" },
+            { src: "resources/music2.mp3", title: "6 DOGS - TAKASHI MURAKAMI" },
+            { src: "resources/music3.mp3", title: "TEENAGE DISASTER - DRIVE ALONE" }
+        ];
+
+        // Índice de la canción actual
+        let currentSongIndex = 0;
+
+        // Función para manejar el evento de clic inicial
+        function handleMouseDown() {
             music.play();
             document.getElementById("preload").style = "opacity: 0; transition: 3s;";
             document.getElementById("hidden").style = "opacity: 1; transition: 6s;";
@@ -102,14 +127,35 @@
             document.getElementById("duration").textContent = formatTime(music.duration);
         }
 
+        // Función para cambiar a la canción anterior
+        function prevSong() {
+            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+            loadSong(currentSongIndex);
+        }
+
+        // Función para cambiar a la siguiente canción
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadSong(currentSongIndex);
+        }
+
+        // Función para cargar una canción
+        function loadSong(index) {
+            const song = songs[index];
+            music.src = song.src;
+            music.play();
+            songTitle.textContent = `YOU ARE NOW LISTENING TO : ${song.title}`;
+            currentSongTitle.textContent = song.title; // Actualizar el nombre de la canción entre las flechas
+        }
+
+        // Función para ajustar el volumen
         function adjustVolume() {
-            const music = document.getElementById("music");
             const volume = document.getElementById("volumeControl").value;
             music.volume = volume;
         }
 
+        // Función para actualizar la barra de progreso
         function updateProgress() {
-            const music = document.getElementById("music");
             const progress = document.getElementById("progressControl");
             const currentTime = music.currentTime;
 
@@ -118,26 +164,34 @@
             document.getElementById("currentTime").textContent = formatTime(currentTime);
         }
 
+        // Función para buscar en la pista
         function seekTrack() {
-            const music = document.getElementById("music");
             const progress = document.getElementById("progressControl");
             const seekTime = (progress.value / 100) * music.duration;
             music.currentTime = seekTime;
         }
 
+        // Función para formatear el tiempo
         function formatTime(seconds) {
             const minutes = Math.floor(seconds / 60);
             const remainingSeconds = Math.floor(seconds % 60);
             return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
         }
 
+        // Eventos
+        prevBtn.addEventListener("click", prevSong);
+        nextBtn.addEventListener("click", nextSong);
+
         // Update progress and time on every time update
-        document.getElementById("music").addEventListener("timeupdate", updateProgress);
+        music.addEventListener("timeupdate", updateProgress);
 
         // Update the duration once metadata is loaded
-        document.getElementById("music").addEventListener("loadedmetadata", function () {
+        music.addEventListener("loadedmetadata", function () {
             document.getElementById("duration").textContent = formatTime(this.duration);
         });
+
+        // Cargar la primera canción al inicio
+        loadSong(currentSongIndex);
     </script>
 </body>
 
