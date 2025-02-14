@@ -39,40 +39,40 @@
                 <br><br>
                 Because I'm too lazy to maintain a domain, and I spent half a night and morning coding the music you are hearing right now. I wanted to make it worth it.
             </p>
+        </div>
 
+        <br><br><br>
+                 <!--La pagina esta divida en dos para evitar un problema con los botones-->
+        <div class="text-border">
                <p>Pick one:</p> 
 
-
                <ul>
-
                     <li><a href="about_me.html" class="highlight" target="_blank">[About me.]</a></li>
                     <li><a href="setup.html" class="highlight" target="_blank">[My Set-Up.]</a></li> 
                     <li><a href="webs.html" class="highlight" target="_blank">[Other cool websites.]</a></li>
                     <li><a href="software.html" class="highlight" target="_blank">[My software recomendations.]</a></li>
                     <li><a href="projects.html" class="highlight" target="_blank">[My projects.]</a></li>
-   
                 </ul>
             <br>
-            <marquee id="songTitle">YOU ARE NOW LISTENING TO : LIL PEEP - NINETEEN</marquee>
-            <div id="player-controls">
-                <button id="prevBtn">◀</button>
-                <span id="currentSongTitle">LIL PEEP - NINETEEN</span>
-                <button id="nextBtn">▶</button> 
-                <label for="volumeControl">Volume</label>
-                <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.5" />
-                <input id="progressControl" type="range" min="0" max="100" value="0" step="1" />
-                <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
-            </div>
+            <marquee>Money only thing that's on my schedule!</marquee> 
+                <div id="player-controls">
+                    <button id="prevBtn">◀</button>
+                    <span id="currentSongTitle">6 DOGS - NEXT LEVEL</span>
+                    <button id="nextBtn">▶</button> 
+                    <label for="volumeControl">Volume</label>
+                    <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.5" />
+                    <input id="progressControl" type="range" min="0" max="100" value="0" step="1" />
+                    <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
+                 </div>
         </div>
 
         <br><br><br><br>
 
         <a href="https://github.com/canopy420/canopy420.github.io" class="highlight" target="_blank">[Access the website source code here.]</a>
         <br>
-        <small>Last update: 13/2/2025</small>
+        <small>Last update: 14/2/2025</small>
         <br>
-        <small>Changelog: New things.</small>
-
+        <small>Changelog: Added new software.</small>
 
         <div class="miku">
             <a href="gym-class.mp4">
@@ -94,22 +94,21 @@
         document.getElementById("progressControl").addEventListener("input", seekTrack);
 
         const music = document.getElementById("music");
-        const songTitle = document.getElementById("songTitle");
         const currentSongTitle = document.getElementById("currentSongTitle");
         const prevBtn = document.getElementById("prevBtn");
         const nextBtn = document.getElementById("nextBtn");
 
-        // Lista de canciones
+        // Lista de canciones con sus títulos y textos personalizados para el marquee
         const songs = [
-            { src: "resources/music.mp3", title: "LIL PEEP - NINETEEN" },
-            { src: "resources/music2.mp3", title: "6 DOGS - TAKASHI MURAKAMI" },
-            { src: "resources/music3.mp3", title: "TEENAGE DISASTER - DRIVE ALONE" }
+            { src: "resources/music.mp3", title: "6 DOGS - NEXT LEVEL", marqueeText: "Money only thing that's on my schedule!" },
+            { src: "resources/music2.mp3", title: "LIL PEEP - GLASSY", marqueeText: "Feelin' like I'm dead, lookin' up from my bed ᶻ 𝗓 𐰁" },
+            { src: "resources/music3.mp3", title: "JUICE WRLD - ARMED AND DANGEROUS", marqueeText: "Broke n*ggas over there, Why is you over here?  Go over there!" }
         ];
 
-        // Índice de la canción actual
+        // Empieza en la canción 0 (va de 0 a 2)
         let currentSongIndex = 0;
 
-        // Función para manejar el evento de clic inicial
+        // Animación inicial
         function handleMouseDown() {
             music.play();
             document.getElementById("preload").style = "opacity: 0; transition: 3s;";
@@ -144,8 +143,8 @@
             const song = songs[index];
             music.src = song.src;
             music.play();
-            songTitle.textContent = `YOU ARE NOW LISTENING TO : ${song.title}`;
             currentSongTitle.textContent = song.title; // Actualizar el nombre de la canción entre las flechas
+            document.querySelector("marquee").textContent = song.marqueeText; // Actualizar el texto del marquee
         }
 
         // Función para ajustar el volumen
@@ -182,10 +181,10 @@
         prevBtn.addEventListener("click", prevSong);
         nextBtn.addEventListener("click", nextSong);
 
-        // Update progress and time on every time update
+        // Actualizar la barra de progreso y el tiempo en cada actualización
         music.addEventListener("timeupdate", updateProgress);
 
-        // Update the duration once metadata is loaded
+        // Actualizar la duración una vez que se carguen los metadatos
         music.addEventListener("loadedmetadata", function () {
             document.getElementById("duration").textContent = formatTime(this.duration);
         });
