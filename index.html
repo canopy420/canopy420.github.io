@@ -27,9 +27,6 @@
         <br>
 
         <div class="text-border">
-            <br>
-            <a href="es/esindex.html" class="highlight">[Cambiar idioma a Español.]</a>
-            <br><br>
             <p>
                 <b>Welcome to my Website.</b>
                 <br><br>
@@ -41,7 +38,7 @@
             </p>
         </div>
 
-        <br><br><br>
+        <br><br><br><br>
                  <!--La pagina esta divida en dos para evitar un problema con los botones-->
         <div class="text-border">
                <p>Pick one:</p> 
@@ -54,10 +51,10 @@
                     <li><a href="projects.html" class="highlight" target="_blank">[My projects.]</a></li>
                 </ul>
             <br>
-            <marquee>Money only thing that's on my schedule!</marquee> 
+            <marquee>Wasted, I'm on these drugs, I feel wasted.</marquee> 
                 <div id="player-controls">
                     <button id="prevBtn">◀</button>
-                    <span id="currentSongTitle">6 DOGS - NEXT LEVEL</span>
+                    <span id="currentSongTitle">JUICE WRLD - WASTED (FT. LIL UZI VERT)</span>
                     <button id="nextBtn">▶</button> 
                     <label for="volumeControl">Volume</label>
                     <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.5" />
@@ -84,114 +81,7 @@
 
     <audio id="music" class="music" src="resources/music.mp3" autoplay loop style="display: none"></audio>
 
-    <script>
-        document.getElementById("music").pause();
-        document.getElementById("hidden").style = "opacity: 0; transition: 2s;";
-
-        document.addEventListener("mousedown", handleMouseDown);
-
-        document.getElementById("volumeControl").addEventListener("input", adjustVolume);
-        document.getElementById("progressControl").addEventListener("input", seekTrack);
-
-        const music = document.getElementById("music");
-        const currentSongTitle = document.getElementById("currentSongTitle");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-
-        // Lista de canciones con sus títulos y textos personalizados para el marquee
-        const songs = [
-            { src: "resources/music.mp3", title: "6 DOGS - NEXT LEVEL", marqueeText: "Money only thing that's on my schedule!" },
-            { src: "resources/music2.mp3", title: "LIL PEEP - GLASSY", marqueeText: "Feelin' like I'm dead, lookin' up from my bed ᶻ 𝗓 𐰁" },
-            { src: "resources/music3.mp3", title: "JUICE WRLD - ARMED AND DANGEROUS", marqueeText: "Broke n*ggas over there, Why is you over here?  Go over there!" }
-        ];
-
-        // Empieza en la canción 0 (va de 0 a 2)
-        let currentSongIndex = 0;
-
-        // Animación inicial
-        function handleMouseDown() {
-            music.play();
-            document.getElementById("preload").style = "opacity: 0; transition: 3s;";
-            document.getElementById("hidden").style = "opacity: 1; transition: 6s;";
-
-            var rythm = new Rythm();
-            rythm.addRythm("blur1", "blur", 0, 250);
-            rythm.addRythm('bass', 'pulse', 0, 10, { min: 0.6, max: 0.8 });
-            rythm.connectExternalAudioElement(music);
-            rythm.setGain(0.07);
-            rythm.start();
-
-            document.removeEventListener("mousedown", handleMouseDown);
-
-            document.getElementById("duration").textContent = formatTime(music.duration);
-        }
-
-        // Función para cambiar a la canción anterior
-        function prevSong() {
-            currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-            loadSong(currentSongIndex);
-        }
-
-        // Función para cambiar a la siguiente canción
-        function nextSong() {
-            currentSongIndex = (currentSongIndex + 1) % songs.length;
-            loadSong(currentSongIndex);
-        }
-
-        // Función para cargar una canción
-        function loadSong(index) {
-            const song = songs[index];
-            music.src = song.src;
-            music.play();
-            currentSongTitle.textContent = song.title; // Actualizar el nombre de la canción entre las flechas
-            document.querySelector("marquee").textContent = song.marqueeText; // Actualizar el texto del marquee
-        }
-
-        // Función para ajustar el volumen
-        function adjustVolume() {
-            const volume = document.getElementById("volumeControl").value;
-            music.volume = volume;
-        }
-
-        // Función para actualizar la barra de progreso
-        function updateProgress() {
-            const progress = document.getElementById("progressControl");
-            const currentTime = music.currentTime;
-
-            progress.value = (currentTime / music.duration) * 100;
-
-            document.getElementById("currentTime").textContent = formatTime(currentTime);
-        }
-
-        // Función para buscar en la pista
-        function seekTrack() {
-            const progress = document.getElementById("progressControl");
-            const seekTime = (progress.value / 100) * music.duration;
-            music.currentTime = seekTime;
-        }
-
-        // Función para formatear el tiempo
-        function formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const remainingSeconds = Math.floor(seconds % 60);
-            return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
-        }
-
-        // Eventos
-        prevBtn.addEventListener("click", prevSong);
-        nextBtn.addEventListener("click", nextSong);
-
-        // Actualizar la barra de progreso y el tiempo en cada actualización
-        music.addEventListener("timeupdate", updateProgress);
-
-        // Actualizar la duración una vez que se carguen los metadatos
-        music.addEventListener("loadedmetadata", function () {
-            document.getElementById("duration").textContent = formatTime(this.duration);
-        });
-
-        // Cargar la primera canción al inicio
-        loadSong(currentSongIndex);
-    </script>
+    <script src="resources/script.js"></script>
 </body>
 
 </html>

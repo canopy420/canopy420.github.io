@@ -28,7 +28,7 @@ a, h1 {
 
   .text-border {
     width: 50vw;
-    border: 3px double #465a8f;
+    border: 3px double #442563;
     border-radius: 0px;
     justify-content: center;
     padding: 5px 10px;
@@ -41,7 +41,7 @@ a, h1 {
 .frame-border {
   width: 20vw;
   margin-top: 30px;
-  border: 3px double #465a8f;
+  border: 3px double #3B1E58;
   border-radius: 0px;
   justify-content: center;
   padding: 5px 10px;
@@ -76,7 +76,7 @@ a, h1 {
   }  
   
   .highlight {
-    color: #80a1f2;
+    color: #5a367e;
     font-size: 17px;
     text-shadow: none;
     transition: 0.5s;
@@ -213,5 +213,15 @@ img {
 
  li {
   margin: 10px 0;           
+}
+
+.setup-img1 {
+  width: 38%;
+  padding: 20px 0px 35px 0px;
+}
+
+.setup-img2 {
+  width: 48%;
+  padding: 20px 0px 35px 0px;
 }
 
