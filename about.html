@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="resources/styles.css">
+    <link rel="icon" type="image/x-icon" href="images/icon.jpg" />
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script async src="oneko/oneko.js"></script>
+    <title>Canopy.</title>
+</head>
+<body>
+    <div id="particles-js"></div>  
+    <h1>About Me.</h1>
+    <div class="text-border">
+        <p>Hey! im Canopy, im a computer science student from Spain, I made this website as a way to practice web development, mixing in some code from my previous website. Im not only into tech, i also like fashion and music.</p>
+        <h3>My Set-Up</h3>
+        <p>You would expect that someone who likes tech has the last things on the market and all that shit, in this case thats not true.
+            For my PC i have a self-build one with 8GB of RAM DDR3, an AMD A10-5800K CPU with a AMD Radeon R7 250X GPU.</p>
+        <h3>Contact Me</h3>
+        <p>I currently DON'T have an email, the only way you can contact me is via discord: @kryxd420 , take it or leave it.</p>
+        <br><br><br>
+        <p>Im always trying to improve, THIS WEBSITE IS NOT FINISHED ANT IT WILL NEVER BE, SPECIALLY AT LAUNCH.</p>
+    </div>
+    <br><br><br>
+    <div class="frame-border"><iframe title="Discord user embed" width="340" height="120" frameborder="0" src="https://widgets.vendicated.dev/user?id=1222608848700047383&theme=dark&banner=true&full-banner=false&rounded-corners=true&discord-icon=false&badges=false&guess-nitro=false&"></iframe>
+    <p>Discord</p></div>
+
+
+
+
+
+
+
+
+
+    
+    <script>
+        const particlesConfig = {
+            particles: {
+                number: { value: 160, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 }, image: { src: "img/github.svg", width: 100, height: 100 } },
+                opacity: { value: 1, random: true, anim: { enable: true, speed: 1, opacity_min: 0, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 4, size_min: 0.3, sync: false } },
+                line_linked: { enable: false, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 1, direction: "none", random: true, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 600 } }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: false, mode: "bubble" }, onclick: { enable: false, mode: "repulse" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 250, size: 0, duration: 2, opacity: 0, speed: 3 }, repulse: { distance: 400, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        };
+
+        particlesJS("particles-js", particlesConfig);
+    </script>
+ 
+</body>
+</html>

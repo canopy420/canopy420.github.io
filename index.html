@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="resources/styles.css">
+    <link rel="icon" type="image/x-icon" href="images/icon.jpg" />
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script async src="oneko/oneko.js"></script>
+    <title>Canopy.</title>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div id="preload">
+        <h1>Canopy.</h1>
+        <small>Click Anywhere.</small>
+    </div>
+    <div id="hidden">
+        <h1>CANOPY.</h1>
+        <div class="player">
+            <p>MUSIC PLAYER</p>
+            <marquee>Give us more trauma nothings gonna solve 'em.</marquee>
+            <div id="player-controls">
+                <button id="prevBtn">◀</button>
+                <span id="currentSongTitle">ONLY BAD COMPANY - KIDZ WITH PROBLEMS</span>
+                <button id="nextBtn">▶</button>
+                <br>
+                <label for="volumeControl">Volume</label>
+                <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.5" />
+                <input id="progressControl" type="range" min="0" max="100" value="0" step="1" />
+                <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <img class="pfp" src="images/pfp.jpg" alt="pfp">
+                <div class="card-text">
+                    <p>CANOPY</p>
+                    <small>Website & Cheat Developer.</small>
+                    <p>Hey! im Cano, a technology enthusiat from Spain, in this website you will see poor skills and a few projects.</p>
+                    <p>
+                        <a href="about.html" target="_blank">About Me.</a>
+                        <a href="projects.html" target="_blank">My Projects.</a>
+                        <a href="misc.html" target="_blank">Cool Things.</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="info">
+                <small>Last Update: 30/03/2025</small><br>
+                <small>Changelog: Website launch.</small>
+                <a href="https://github.com/canopy420/canopy420.github.io" target="_blank">[Access the website source code]</a>
+            </div>
+        </div>
+    </div>
+
+    <audio id="music" class="music" src="media/music.mp3" autoplay loop style="display: none"></audio>
+    <script>
+        const particlesConfig = {
+            particles: {
+                number: { value: 160, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 }, image: { src: "img/github.svg", width: 100, height: 100 } },
+                opacity: { value: 1, random: true, anim: { enable: true, speed: 1, opacity_min: 0, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 4, size_min: 0.3, sync: false } },
+                line_linked: { enable: false, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 1, direction: "none", random: true, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 600 } }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: false, mode: "bubble" }, onclick: { enable: false, mode: "repulse" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 250, size: 0, duration: 2, opacity: 0, speed: 3 }, repulse: { distance: 400, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        };
+
+        particlesJS("particles-js", particlesConfig);
+    </script>
+    <script src="resources/script.js"></script>
+</body>
+</html>
