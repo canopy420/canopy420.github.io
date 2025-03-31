@@ -172,6 +172,7 @@ a:hover::before{
   .card {
     width: 80vw;
     flex-direction: column;
+    margin-top: 40px;
   }
 
   .pfp {
@@ -183,7 +184,7 @@ a:hover::before{
   }
 
   .info {
-    margin-top: 100px;
+    margin-top: 199px;
     font-size: 0.9rem;
   }
 
