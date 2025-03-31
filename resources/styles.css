@@ -4,13 +4,16 @@ body{
   word-break: break-word;
   color: white;
   font-family: "VCR OSD Mono", sans-serif;
-  overflow: hidden;
   text-align: center;
 }
 
 @font-face {
     font-family: VCR OSD Mono;
     src: url("VCR_OSD_MONO_1.001.ttf");
+}
+
+::-webkit-scrollbar {
+  display: none; 
 }
 
 #preload {
@@ -172,10 +175,7 @@ a:hover::before{
   .card {
     width: 80vw;
     flex-direction: column;
-    margin-top: 20vh;
-    position: relative;
-    left: auto;
-    transform: none;
+    margin-top: auto;
   }
 
   .pfp {
