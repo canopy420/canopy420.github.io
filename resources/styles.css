@@ -106,9 +106,9 @@ body{
 a {
   background-image: linear-gradient(
     to right,
-    #b8b7b7,
-    #b8b7b7 50%,
-    #696969 50%
+    #a8a8a8,
+    #a8a8a8 50%,
+    #636262 50%
   );
   background-size: 200% 100%;
   background-position: -100%;
@@ -122,7 +122,7 @@ a {
 
 a:before{
   content: '';
-  background: #b8b7b7;
+  background: #636262;
   display: block;
   position: absolute;
   bottom: -3px;
@@ -164,5 +164,32 @@ a:hover::before{
   align-items: center;
   display: inline-block;
   background-color: #1717178c;
+  padding-top: 15px;
+
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 80vw;
+    flex-direction: column;
+  }
+
+  .pfp {
+    width: 100px;
+  }
+
+  .text-border, .frame-border {
+    width: 80vw;
+  }
+
+  .info {
+    margin-top: 100px;
+    font-size: 0.9rem;
+  }
+
+  .player {
+    width: 465px;
+
+  }
 
 }

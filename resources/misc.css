@@ -12,6 +12,10 @@ body{
       src: url("VCR_OSD_MONO_1.001.ttf");
   }
 
+  ::-webkit-scrollbar {
+    display: none; 
+}
+
   #particles-js {
     position: absolute; 
     top: 0;
@@ -24,9 +28,9 @@ body{
   a {
     background-image: linear-gradient(
       to right,
-      #b8b7b7,
-      #b8b7b7 50%,
-      #696969 50%
+      #a8a8a8,
+      #a8a8a8 50%,
+      #636262 50%
     );
     background-size: 200% 100%;
     background-position: -100%;
@@ -40,7 +44,7 @@ body{
   
   a:before{
     content: '';
-    background: #b8b7b7;
+    background: #636262;
     display: block;
     position: absolute;
     bottom: -3px;
