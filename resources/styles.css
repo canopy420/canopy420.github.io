@@ -175,7 +175,7 @@ a:hover::before{
   .card {
     width: 80vw;
     flex-direction: column;
-    margin-top: auto;
+    margin-top: 10px;
   }
 
   .pfp {
@@ -187,13 +187,14 @@ a:hover::before{
   }
 
   .info {
-    margin-top: 199px;
+    margin-top: 100px;
     font-size: 0.9rem;
   }
 
   .player {
-    width: 465px;
+    display: none;
 
   }
+
 
 }
