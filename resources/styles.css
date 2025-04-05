@@ -121,6 +121,7 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 a:before{
@@ -197,4 +198,45 @@ a:hover::before{
   }
 
 
+}
+
+.skill {
+  width: 190px;
+  height: 254px;
+  background-image: linear-gradient(163deg, #ffffff 0%, #5f5f5f 100%);    
+  border-radius: 20px;
+  transition: all .3s;
+}
+
+.skill2 {
+  width: 190px;
+  height: 254px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  transition: all .2s;
+
+}
+
+.skill2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.skill:hover {
+  box-shadow: 0px 0px 30px 1px #ffffff;
+}
+
+.texto{
+  padding: 5px;
+
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 70px; 
+  padding-top: 60px;
+  margin-top: 20px; 
+  flex-wrap: wrap; 
 }
