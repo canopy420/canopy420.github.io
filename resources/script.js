@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextBtn = document.getElementById("nextBtn");
 
     const songs = [
-        { src: "media/music.mp3", title: "ONLY BAD COMPANY - KIDZ WITH PROBLEMS", marqueeText: "Give us more trauma nothings gonna solve 'em." },
-        { src: "media/music2.mp3", title: "THXSOMCH - SPIT IN MY FACE!", marqueeText: "Spit in my face, my love, it won't change me." },
-        { src: "media/music3.mp3", title: "6ARELYHUMAN - FASTER N HARDER", marqueeText: "Party like a rock star, look like a porn star." }
+        { src: "media/music.mp3", title: "KNEE NOLA - PARTY GIRL", marqueeText: "I'll just be a sad boy in a Range Rover." },
+        { src: "media/music2.mp3", title: "SCRIM - METHAMPHETAMINE BLUE", marqueeText: "Don’t be asking me how I’ve been, if you don't really care." },
+        { src: "media/music3.mp3", title: "YUNGGOTH - IDK HOW TO KILL MYSELF", marqueeText: "I've been on track, 20 racks on 20 bitches." }
     ];
 
     let currentSongIndex = 0;
