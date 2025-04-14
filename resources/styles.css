@@ -188,7 +188,7 @@ a:hover::before{
   }
 
   .info {
-    display: none;
+    margin-top: 70vw;
   }
 
   .player {
@@ -198,6 +198,31 @@ a:hover::before{
 
 
 }
+
+@media (min-width: 769px) and (max-width: 1400px) {
+  .card {
+    width: 60vw;
+    flex-direction: column;
+    position: static;
+    transform: none;
+    margin-top: 30px;
+  }
+
+  .player {
+    width: 60vw;
+    margin-top: 20px;
+  }
+
+  .container {
+    height: auto;
+    padding-bottom: 40px;
+  }
+  .info{
+    margin-top: 30px;
+
+  }
+}
+
 
 .skill {
   width: 190px;
