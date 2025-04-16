@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextBtn = document.getElementById("nextBtn");
 
     const songs = [
-        { src: "media/music.mp3", title: "KNEE NOLA - PARTY GIRL", marqueeText: "I'll just be a sad boy in a Range Rover." },
-        { src: "media/music2.mp3", title: "SCRIM - METHAMPHETAMINE BLUE", marqueeText: "Don’t be asking me how I’ve been, if you don't really care." },
-        { src: "media/music3.mp3", title: "YUNGGOTH - IDK HOW TO KILL MYSELF", marqueeText: "I've been on track, 20 racks on 20 bitches." }
+        { src: "media/music.mp3", title: "CYBERTRASH FT.VAEO - HANG TIGHT", marqueeText: "Better with my time, but what you wasted on?" },
+        { src: "media/music2.mp3", title: "2HOLLIS - SAFETY", marqueeText: "Even when I feel sober, I'm paranoid out of my head." },
+        { src: "media/music3.mp3", title: "TWIKIPEDIA FT.SEBii  - TALK DOWN", marqueeText: "Shut the fuck up, I been told you I don't givе a shit." }
     ];
 
     let currentSongIndex = 0;
