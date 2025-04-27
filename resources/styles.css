@@ -51,6 +51,21 @@ body{
   box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; 
 }
 
+.player:hover {
+  transform: scale(1.02); 
+  transition: 0.3s;
+}
+
+#prevBtn, #nextBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+
 #particles-js {
   position: absolute; 
   top: 0;

@@ -24,16 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
         music.play();
         document.getElementById("preload").style = "opacity: 0; transition: 3s;";
         document.getElementById("hidden").style = "opacity: 1; transition: 6s;";
-
-        var rythm = new Rythm();
-        rythm.addRythm("blur1", "blur", 0, 250);
-        rythm.addRythm('bass', 'pulse', 0, 10, { min: 0.6, max: 0.8 });
-        rythm.connectExternalAudioElement(music);
-        rythm.setGain(0.07);
-        rythm.start();
-
         document.getElementById("duration").textContent = formatTime(music.duration);
     }
+
 
     function prevSong() {
         currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
