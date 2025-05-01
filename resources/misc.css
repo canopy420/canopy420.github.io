@@ -75,3 +75,13 @@ body{
     line-height: 24px;
   
   }
+
+  @media (max-width: 768px) {
+
+  
+    .text-border, .frame-border {
+      width: 80vw;
+    }
+  
+
+  }
