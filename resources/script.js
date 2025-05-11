@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextBtn = document.getElementById("nextBtn");
 
     const songs = [
-        { src: "media/music.mp3", title: "CITY MORGUE - SCREAMING AT THE RAIN", marqueeText: "What did you fuck up, and then who did you blame?" },
-        { src: "media/music2.mp3", title: "LIL PEEP - BENZ TRUCK", marqueeText: "Who you wanna hate now? Pretty soon you gonna hate me." },
-        { src: "media/music3.mp3", title: "$UICIDEBOYS$  - ANTARTICA", marqueeText: "Spray paint the walls with blood and whatever." }
+        { src: "media/music.mp3", title: "WIFISKELETON - Nope your too late i already died", marqueeText: "You're just a little bit late, I guess you're already done" },
+        { src: "media/music2.mp3", title: "SHTEPPI - CASUAL SEX", marqueeText: "I hope you keep me in your mind for a rainy day" },
+        { src: "media/music3.mp3", title: "LIL PEEP - TOXIC CITY", marqueeText: "If tonight was my last night, I would keep on countin'" }
     ];
 
     let currentSongIndex = 0;
