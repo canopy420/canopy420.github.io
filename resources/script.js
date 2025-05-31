@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextBtn = document.getElementById("nextBtn");
 
     const songs = [
-        { src: "media/music.mp3", title: "WIFISKELETON - Nope your too late i already died", marqueeText: "You're just a little bit late, I guess you're already done" },
-        { src: "media/music2.mp3", title: "SHTEPPI - CASUAL SEX", marqueeText: "I hope you keep me in your mind for a rainy day" },
-        { src: "media/music3.mp3", title: "LIL PEEP - TOXIC CITY", marqueeText: "If tonight was my last night, I would keep on countin'" }
+        { src: "media/music.mp3", title: "LIL TECCA - DARK THOUGHTS", marqueeText: "I get dark thoughts too, but I keep 'em" },
+        { src: "media/music2.mp3", title: "PLAYBOI CARTI - MAGNOLIA", marqueeText: "Designer is on me , call it dirty laundry" },
+        { src: "media/music3.mp3", title: "BRANKOL HAYDEN - NO DRAMA", marqueeText: "To be honest, I just want Balenciaga" }
     ];
 
     let currentSongIndex = 0;

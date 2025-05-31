@@ -1,19 +1,29 @@
+/* Cuando hice este css, solo dios sabia como funcionaba, ahora no lo sabe ni el porque como quites algo que no debes se rompe la .card y no se ni como, 
+aunque creas que no se ha roto, creeme que en algun navegador lo ha hecho (probablemente firefox) */
+
+
 body{
   background-color: black;
   image-rendering: optimizespeed;
   word-break: break-word;
+  overflow-wrap: break-word;
   color: white;
   font-family: "VCR OSD Mono", sans-serif;
   text-align: center;
 }
 
 @font-face {
-    font-family: VCR OSD Mono;
-    src: url("VCR_OSD_MONO_1.001.ttf");
+  font-family: "VCR OSD Mono";
+  src: url("VCR_OSD_MONO_1.001.woff2") format("woff2"),
+       url("VCR_OSD_MONO_1.001.ttf") format("truetype");
 }
 
 ::-webkit-scrollbar {
   display: none; 
+}
+
+html {
+  scrollbar-width: none;
 }
 
 #preload {
@@ -27,16 +37,13 @@ body{
 }
 
 #preload p {
-  white-space: nowrap;
   font-size: 1.25rem;
 }
-
 
 #hidden {
   opacity: 0;
   transition: 0s;
   text-align: center;
-  white-space: nowrap; 
 }  
 
 .player {
@@ -50,11 +57,12 @@ body{
   background-color: #1717178c;
   box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; 
   transition: transform 0.3s ease-in-out; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .player:hover {
   transform: scale(1.02); 
-  transition: 0.3s;
   transition: transform 0.3s ease-in-out; 
 }
 
@@ -79,23 +87,34 @@ body{
 
 .card {
   width: 40vw;
-  border: 3px solid #ffffff; 
-  border-radius: 10px; 
+  border: 3px solid #ffffff;
+  border-radius: 10px;
   padding: 15px;
   background-color: #1717178c;
-  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; 
+  box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  display: flex; 
-  flex-direction: row; 
-  gap: 15px; 
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center; 
+}
+
+.card-text p, .card-text small, .card-text a {
+  margin-bottom: 5px; 
+}
+
+.card-text p:last-of-type, .card-text a:last-of-type {
+  margin-bottom: 0;
 }
 
 .pfp {
   width: 177px;
   border-radius: 50%;
+  height: auto;
+  flex-shrink: 0; 
 }
 
 .info {
@@ -117,6 +136,7 @@ body{
   width: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center; 
   text-align: left;
   margin-left: 20px;
   white-space: normal;
@@ -194,22 +214,30 @@ a:hover::before{
     width: 80vw;
     flex-direction: column;
     margin-top: 10px;
+    position: static; 
+    transform: none; 
+    align-items: center; 
+    padding: 10px; 
   }
 
   .pfp {
     width: 100px;
+    margin-bottom: 10px; 
   }
 
-  .text-border, .frame-border {
-    width: 80vw;
+  .card-text {
+    margin-left: 0; 
+    text-align: center; 
   }
-
-  .info {
-    margin-top: 85vw;
-  }
-
+  
   .player {
     display: none;
+  }
+
+  .info{
+
+    margin-top: 10vw;
+
 
   }
 
@@ -218,25 +246,17 @@ a:hover::before{
 @media (min-width: 769px) and (max-width: 1400px) {
   .card {
     width: 60vw;
-    flex-direction: column;
+    flex-direction: row; 
     position: static;
     transform: none;
-    margin-top: 30px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  .card-text {
+    margin-left: 20px; 
+    text-align: left; 
   }
 
-  .player {
-    width: 60vw;
-    margin-top: 20px;
-  }
-
-  .container {
-    height: auto;
-    padding-bottom: 40px;
-  }
-  .info{
-    margin-top: 30px;
-
-  }
 }
 
 
