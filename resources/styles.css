@@ -209,7 +209,7 @@ a:hover::before{
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {     /* Telefonos */
   .card {
     width: 80vw;
     flex-direction: column;
@@ -234,16 +234,33 @@ a:hover::before{
     display: none;
   }
 
-  .info{
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh;
+    padding-top: 40px;
+  }  
 
-    margin-top: 10vw;
+  .info {
+    margin-top: 30px; 
+  }
 
+  .text-border {
+    width: 80vw;
+  }
+
+  .frame-border {
+    width: 85vw;
 
   }
 
+
+
 }
 
-@media (min-width: 769px) and (max-width: 1400px) {
+@media (min-width: 769px) and (max-width: 1400px) { /* pantallas pequeñas de laptops y otras pero no moviles */
   .card {
     width: 60vw;
     flex-direction: row; 
@@ -256,6 +273,20 @@ a:hover::before{
     margin-left: 20px; 
     text-align: left; 
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh;
+    padding-top: 40px;
+  }
+
+  .info {
+    margin-top: 30px; 
+  }
+
 
 }
 
